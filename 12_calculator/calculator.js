@@ -1,6 +1,9 @@
-const add = function() {
-	
+const add = function(a, b) {
+	let sum = a + b; 
+  return sum
 };
+
+console.log(add(1, 6));
 
 const subtract = function() {
 	
