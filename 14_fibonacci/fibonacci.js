@@ -1,16 +1,3 @@
-
-
-
-// for (const [i, num] of arr.entries()){
-//     console.log(`${i}:${num}`);
-// }
-
-// for (let i = 1; i <= arr.length; i++){
-//     console.log(arr[i]);
-// }
-
-
-
 // the role of 'num' is to index that through the fibonacci sequence
 // and return the respective value at that index (i.e., index of 4 = 3)
 
