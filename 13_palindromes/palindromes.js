@@ -1,12 +1,12 @@
 const palindromes = function (string) {
-    let newString = string.replace(/[^A-Z0-9]/ig, "");
-    let revString = string.split("").reverse().join("");
-    return (revString == newString);
+    let newString = string.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+    let revString = newString.split("").reverse().join("");
+    return (revString === newString);
+
 }
 
-// https://stackoverflow.com/questions/13020246/remove-special-symbols-and-extra-spaces-and-replace-with-underscore-using-the-re
 
-console.log(palindromes('A car, a man, a maraca.'));
+console.log(palindromes('rac3e3car'));
 // console.log(palindromes('tacos'));
 
 
