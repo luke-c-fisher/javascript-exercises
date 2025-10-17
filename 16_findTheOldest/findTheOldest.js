@@ -1,8 +1,8 @@
 const findTheOldest = function(array) {
-    return array.reduce((accum, current) => {
-        accum[current[0]] = current[1];
+    return array.reduce((accum, user) => {
+        accum[user.name] = user.yearOfDeath - user.yearOfBirth;
         return accum;
-    })
+    }, {});
     // return array.sort((a, b) => b.yearOfDeath - a.yearOfDeath);
 };
 
