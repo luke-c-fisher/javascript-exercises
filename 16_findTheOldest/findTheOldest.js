@@ -1,10 +1,25 @@
 const findTheOldest = function(array) {
-    return array.reduce((accum, user) => {
-        accum[user.name] = user.yearOfDeath - user.yearOfBirth;
-        return accum;
-    }, {});
-    // return array.sort((a, b) => b.yearOfDeath - a.yearOfDeath);
+    return array
+        .map((age) => age.yearOfDeath - age.yearOfBirth)
+        .reduce((accumulator, age) => {
+            return (accumulator > age ? accumulator : age)
+        }, 0);
+    
+        
 };
+
+// accum[user.name]
+
+// let arr = [1, 5, 6, 8, 9]
+
+// const findMax = function (array) {
+//     let maxVal = array.reduce((accumulator, value) => {
+//         return (accumulator > value ? accumulator : value);
+//     }, 0);
+//     return maxVal;
+// }
+
+// console.log(findMax(arr));
 
 const people = [
     {
@@ -27,4 +42,4 @@ const people = [
 console.log(findTheOldest(people));
 
 // Do not edit below this line
-module.exports = findTheOldest;
+// module.exports = findTheOldest;
