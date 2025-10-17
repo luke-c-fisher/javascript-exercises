@@ -1,12 +1,21 @@
 const findTheOldest = function(array) {
     return array
-        .map((age) => age.yearOfDeath - age.yearOfBirth)
-        .reduce((accumulator, age) => {
-            return (accumulator > age ? accumulator : age)
-        }, 0);
-    
-        
+        .map(age => ({name: age.name, age: age.yearOfDeath - age.yearOfBirth}))
+        .reduce((prev, cur) => {
+            return prev.age > cur.age ? prev.name : cur.name;
+        });    
 };
+
+// const findTheOldest = function(array) {
+//     let obj = array
+//         .map(age => ({name: age.name, age: age.yearOfDeath - age.yearOfBirth}));
+    
+//     return obj.reduce((prev, cur) => {
+//             return obj[prev.age] > obj[cur.age] ? prev.name : cur.name;
+//         }, {});    
+// };
+
+// obj[value.name] = e
 
 // accum[user.name]
 
