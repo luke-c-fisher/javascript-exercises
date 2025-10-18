@@ -1,9 +1,7 @@
 const findTheOldest = function(array) {
     return array
         .map(age => ({name: age.name, age: age.yearOfDeath - age.yearOfBirth}))
-        .reduce((prev, cur) => {
-            return prev.age > cur.age ? prev.name : cur.name;
-        });    
+        .reduce((acc, cur) => !!acc || (acc.age) < (cur.age) ? cur.name : acc, '');
 };
 
 // const findTheOldest = function(array) {
@@ -34,7 +32,7 @@ const people = [
     {
     name: "Carly",
     yearOfBirth: 1942,
-    yearOfDeath: 1970,
+    yearOfDeath: 2020,
     },
     {
     name: "Ray",
